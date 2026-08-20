@@ -1,0 +1,36 @@
+{
+  "name": "nova-dollar",
+  "private": true,
+  "version": "2.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"tsx server/index.ts\"",
+    "build": "vite build && tsc -p server/tsconfig.json",
+    "start": "node dist-server/server/index.js",
+    "server:build": "tsc -p server/tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit && tsc -p server/tsconfig.json --noEmit",
+    "preview": "vite preview",
+    "collector": "tsx collector/mtproto.ts",
+    "collector:login": "tsx collector/login.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.55.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "telegram": "^2.26.22",
+    "input": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.1",
+    "@vitejs/plugin-react": "^5.0.1",
+    "concurrently": "^9.2.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.2"
+  }
+}
